@@ -13,19 +13,23 @@ RUN \
 	g++ \
 	gcc \
 	libtool \
+	libpng-dev \
 	make \
 	nasm \
-	nodejs-npm && \
+	nodejs-npm \
+	zlib-dev && \
 
 # install runtime packages
  apk add --no-cache \
 	curl \
+	libpng \
 	nodejs \
 	php7-curl \
 	php7-dom \
 	php7-iconv \
 	php7-phar \
-	php7-tokenizer && \
+	php7-tokenizer \
+	zlib && \
 
 # install composer
  curl \
