@@ -29,6 +29,7 @@ RUN \
 	php7-iconv \
 	php7-phar \
 	php7-tokenizer \
+	php7-ctype \
 	zlib && \
 
 # install composer
@@ -48,6 +49,8 @@ RUN \
  cd /usr/share/webapps/argus && \
  npm install && \
  composer install && \
+ chmod -R 0777 /usr/share/webapps/argus/storage && \
+ chmod -R 0777 /usr/share/webapps/argus/bootstrap && \
 
 # cleanup
  apk del --purge \
