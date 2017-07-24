@@ -12,8 +12,8 @@ RUN \
 	automake \
 	g++ \
 	gcc \
-	libtool \
 	libpng-dev \
+	libtool \
 	make \
 	nasm \
 	nodejs-npm \
