@@ -1,5 +1,12 @@
 #!/usr/bin/with-contenv bash
 
+# copy env file and run keygen if not present
+if [ ! -f /usr/share/webapps/argus/.env ]; then
+cp /defaults/env /usr/share/webapps/argus/.env
+cd /usr/share/webapps/argus || exit
+php artisan key:generate
+fi
+
 # permissions
 chown -R abc:abc \
 	/usr/share/webapps/argus/storage \

@@ -48,6 +48,7 @@ RUN \
 	/usr/share/webapps/argus --strip-components=1 && \
  cd /usr/share/webapps/argus && \
  npm install && \
+ composer update && \
  composer install && \
 
 # cleanup
