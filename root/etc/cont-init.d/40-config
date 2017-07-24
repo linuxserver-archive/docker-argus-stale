@@ -20,6 +20,14 @@ fi
 [[ ! -L /usr/share/webapps/argus/.env ]] && \
 	ln -s /config/argus/env /usr/share/webapps/argus/.env
 
+# symlink for database
+[[ ! -f /config/argus/database.sqlite ]] && \
+	touch /config/argus/database.sqlite
+[[ -f /usr/share/webapps/argus/database/database.sqlite ]] && \
+	rm /usr/share/webapps/argus/database/database.sqlite
+[[ ! -L /usr/share/webapps/argus/database/database.sqlite ]] && \
+	ln -s /config/argus/database.sqlite /usr/share/webapps/argus/database/database.sqlite
+
 # permissions
 chown -R abc:abc \
 	/config/argus \
