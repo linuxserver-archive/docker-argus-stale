@@ -1,13 +1,22 @@
 #!/usr/bin/with-contenv bash
 
-# copy env file and run keygen if not present
-if [ ! -f /usr/share/webapps/argus/.env ]; then
-cp /defaults/env /usr/share/webapps/argus/.env
-cd /usr/share/webapps/argus || exit
-php artisan key:generate
+# initialise env file
+if [ ! -f "/config/env" ]; then
+	cp /defaults/env /config/env
+	cd /usr/share/webapps/argus || exit
+	[[ -f /usr/share/webapps/argus/.env || -L /usr/share/webapps/argus/.env ]] && \
+		rm /usr/share/webapps/argus/.env
+	ln -s /config/env /usr/share/webapps/argus/.env
+	php artisan key:generate
 fi
+
+# remake symlink for env
+[[ -f /usr/share/webapps/argus/.env ]] && \
+	rm /usr/share/webapps/argus/.env
+[[ ! -L /usr/share/webapps/argus/.env ]] && \
+	ln -s /config/env /usr/share/webapps/argus/.env
 
 # permissions
 chown -R abc:abc \
+	/config \
 	/usr/share/webapps/argus
-
