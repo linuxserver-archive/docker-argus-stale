@@ -12,7 +12,7 @@ RUN \
 	automake \
 	g++ \
 	gcc \
-	libtool\
+	libtool \
 	make \
 	nasm \
 	nodejs-npm && \
