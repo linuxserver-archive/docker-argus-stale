@@ -29,7 +29,9 @@ RUN \
 	php7-dom \
 	php7-iconv \
 	php7-phar \
+	php7-sqlite3 \
 	php7-tokenizer \
+	sqlite \
 	zlib && \
 
 # install composer
