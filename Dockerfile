@@ -50,7 +50,7 @@ RUN \
  npm install && \
  composer install && \
  chmod -R 0777 /usr/share/webapps/argus/storage && \
- chmod -R 0777 /usr/share/webapps/argus/bootstrap && \
+ chmod -R 0777 /usr/share/webapps/argus/bootstrap \
 
 # cleanup
  apk del --purge \
