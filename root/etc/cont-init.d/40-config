@@ -1,0 +1,10 @@
+#!/usr/bin/with-contenv bash
+
+# permissions
+chown -R abc:abc \
+	/usr/share/webapps/argus/storage \
+	/usr/share/webapps/argus/bootstrap
+
+chmod -R 0777 \
+	/usr/share/webapps/argus/storage \
+	/usr/share/webapps/argus/bootstrap
