@@ -53,3 +53,6 @@ RUN \
 	/tmp/* && \
  mkdir -p \
 	/root
+
+# add local files
+COPY root/ /
