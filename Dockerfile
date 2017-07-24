@@ -28,8 +28,8 @@ RUN \
 	php7-curl \
 	php7-dom \
 	php7-iconv \
+	php7-pdo_sqlite \
 	php7-phar \
-	php7-sqlite3 \
 	php7-tokenizer \
 	sqlite \
 	zlib && \
