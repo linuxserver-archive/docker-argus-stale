@@ -24,12 +24,12 @@ RUN \
 	curl \
 	libpng \
 	nodejs \
+	php7-ctype \
 	php7-curl \
 	php7-dom \
 	php7-iconv \
 	php7-phar \
 	php7-tokenizer \
-	php7-ctype \
 	zlib && \
 
 # install composer
