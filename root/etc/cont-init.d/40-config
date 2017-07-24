@@ -1,12 +1,16 @@
 #!/usr/bin/with-contenv bash
 
+# make folder
+mkdir -p \
+	/config/argus
+
 # initialise env file
-if [ ! -f "/config/env" ]; then
-	cp /defaults/env /config/env
+if [ ! -f "/config/argus/env" ]; then
+	cp /defaults/env /config/argus/env
 	cd /usr/share/webapps/argus || exit
 	[[ -f /usr/share/webapps/argus/.env || -L /usr/share/webapps/argus/.env ]] && \
 		rm /usr/share/webapps/argus/.env
-	ln -s /config/env /usr/share/webapps/argus/.env
+	ln -s /config/argus/env /usr/share/webapps/argus/.env
 	php artisan key:generate
 fi
 
@@ -14,9 +18,9 @@ fi
 [[ -f /usr/share/webapps/argus/.env ]] && \
 	rm /usr/share/webapps/argus/.env
 [[ ! -L /usr/share/webapps/argus/.env ]] && \
-	ln -s /config/env /usr/share/webapps/argus/.env
+	ln -s /config/argus/env /usr/share/webapps/argus/.env
 
 # permissions
 chown -R abc:abc \
-	/config \
+	/config/argus \
 	/usr/share/webapps/argus
